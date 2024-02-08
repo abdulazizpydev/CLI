@@ -10,7 +10,7 @@ services:
       - "8000:8000"
 
   nginx:
-    build: ./ngnix
+    build: ./nginx
     volumes:
       - static_vol:/app/app/static
       - media_vol:/app/app/media
