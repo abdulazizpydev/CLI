@@ -1,7 +1,7 @@
 version: 'python3'
 
 services:
-  django_app:
+  web:
     build: .
     env_file:
       - .env
@@ -19,7 +19,7 @@ services:
     ports:
       - "8080:80"
     depends_on:
-      - django_app
+      - web
 
 volumes:
   static_vol:
