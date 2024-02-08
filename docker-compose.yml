@@ -1,0 +1,24 @@
+version: 'python3'
+
+services:
+  django_app:
+    build: .
+    volumes:
+      - static_vol:/app/app/static
+      - media_vol:/app/app/media
+    ports:
+      - "8000:8000"
+
+  nginx:
+    build: ./ngnix
+    volumes:
+      - static_vol:/app/app/static
+      - media_vol:/app/app/media
+    ports:
+      - "80:80"
+    depends_on:
+      - django_app
+
+volumes:
+  static_vol:
+  media_vol:
