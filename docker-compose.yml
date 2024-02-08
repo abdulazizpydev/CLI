@@ -3,6 +3,8 @@ version: 'python3'
 services:
   django_app:
     build: .
+    env_file:
+      - .env
     volumes:
       - static_vol:/app/app/static
       - media_vol:/app/app/media
